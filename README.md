@@ -45,7 +45,7 @@ Before we start building our React app, let's create a `HelloWorld` component ju
 - Define your `Search` component's initial state. It should have a `query` value that corresponds to a search term.
 - Define a function that is triggered whenever the user submits the Search form. Start by just logging `"searched!"` to make sure it works.
   - Use an event listener to attach this function to your form. Try googling `onSubmit`.
-- Define a function that updates your `query` value in state whenever a change is made to the input field. You can do this using an `onChange` function on your text box, or by using `ref`.
+- Define a function that updates your `query` value in state whenever a change is made to the input field. You can do this using an `onChange` function on your text box.
 - Update your submit function so that it now logs the `query` value in state.
 
 ### Step 5: Move search logic to a `SearchContainer` component
@@ -115,23 +115,20 @@ Before we start building our React app, let's create a `HelloWorld` component ju
 - Load in Axios, and use it to make an HTTP request to the API search endpoint using the user's query.
 - Pass the data to the Results component to be displayed.
 
-### Step 8: 
-
-- Lets get rid of Search button and call the external API whenever User is entering string to search (Hint: you may have to make some changes in onInput()).
-- Now that you have that working, lets introduce some performance optimization. Make changes such that component is only re-rendered if the User changes the search string (Hint: use a lifecycle hook. Also, you may have to set the value of `state.query` in another method).
-- After you have made these changes you will notice that even though you are not re-rendering the component, but your app is still making the third-party API call. Use one of the other lifecycle hooks to prevent that from happening (Hint: think about componentDidUpdate() lifecycle method).
-
-
 ## Bonus
 
-### Step 9: Add Styles to your React app
+### Step 8: Add Styles to your React app
 
 - Load in Bootstrap CDN in `index.html`.
 - Modify UI to include Bootstrap classes.
-- Create a `styles` directory and make a file for your CSS rule definitions - this will be written in Javascript!.
-- Load in that file in any component and then use that to apply inline styling.
+- Alternatively look into the react-bootstrap module for another way of styling your components w/ Bootstrap
 
-### Step 10: Add a single result detail component
+### Step 9: Add a single result detail component
 
 - Create a `Details` component that renders information about a single gif.
 - When a user clicks on a  gif in the results view, render the detail UI.
+
+### Step 10: 
+
+- Lets get rid of Search button and call the external API whenever User is entering string to search (Hint: you will need to useEffect() w/ your search query state variable in the dependency array
+- Warning! This functionality, while awesome, will eat through your rate limit extremely fast! The free tier of Giphy API allows for 50 searches TOTAL per hour / or 100 searches per day
