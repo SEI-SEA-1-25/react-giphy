@@ -1,7 +1,14 @@
 body {
   background-color: rgb(64, 187, 179);
 }
-.App {
+.Home {
   text-align: center;
   background-color: aquamarine;
+}
+.glass {
+  height: 200px;
+  width: 200px;
+}
+.search-form {
+  padding-bottom: 50px;
 }
