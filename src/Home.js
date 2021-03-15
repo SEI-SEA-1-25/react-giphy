@@ -1,18 +1,12 @@
 //Imports//
 import "./Home.css";
-import glass from "./search.gif";
+import Search from "./components/Search";
 
 function Home() {
   return (
-    <div className="Home">
-      <h1>Search Giphy</h1>
-      <h3>
-        <img src={glass} alt="searchGif" className="glass" />
-      </h3>
-      <form className="search-form">
-        <input type="text" />
-        <input type="submit" />
-      </form>
+    <div>
+      <h1>Hello from Home</h1>
+      <Search />
     </div>
   );
 }
