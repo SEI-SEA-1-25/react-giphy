@@ -51,8 +51,9 @@ Before we start building our React app, let's create a `HelloWorld` component ju
 ### Step 5: Move search logic to a `SearchContainer` component
 
 - Create a new `SearchContainer` component that that renders the `Search` component. This `SearchContainer` will also handle search results. 
-- Refactor your `Search` component so that it only renders a UI. It should use properties passed into the Search component.
 - Move all of the business logic related to state for the search into the `SearchContainer` component. The `SearchContainer` component should still render the `Search` component, with any necessary properties.
+- Refactor your `Search` component so that it only renders a UI. You should pass in `SearchContainer`'s state and methods into the `Search` component as `props` as necessary.
+
 
 ### Step 6: When a User Searches...
 
