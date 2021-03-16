@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import Search from "./Search"
 import Results from './Results'
@@ -9,8 +9,8 @@ export default function SearchContainer(){
     const [searched, setSearched] = useState(false)
 
     const handleChange = (e) => {
-        
         setQuery(e.target.value)
+        setResults([])
     }
     
     const getResults = async () => {
@@ -22,25 +22,41 @@ export default function SearchContainer(){
             console.log(error)
         }
     }
-    useEffect(() => {
-        console.log('whats up')
-
-    }, [query])
     
     const handleSubmit = (e) => {
         e.preventDefault()
         getResults()
+        setSearched(true)
         console.log('Searched!')
         console.log(query)
+    
     }
+
+
     return (
         <div>
-            
             <Search 
                 handleChange={handleChange} 
                 handleSubmit={handleSubmit} 
+                query={query}
             />
             <Results results={results}/>
         </div>
     )
+    // if(!searched){
+    //     return (
+    //         <div>
+    //             <Search 
+    //                 handleChange={handleChange} 
+    //                 handleSubmit={handleSubmit} 
+    //                 query={query}
+    //             />
+    //         </div>
+    //     )
+
+    // } else {
+    //     return(
+    //         <Results results={results}/>
+    //     )
+    // }
 }

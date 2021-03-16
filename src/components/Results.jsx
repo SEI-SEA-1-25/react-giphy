@@ -1,9 +1,9 @@
 export default function Results(props){
     return (
-        <div>
+        <div className="results-container">
             {props.results.map((result, index) => (
-                <div key={index}>
-                    <img src={result.images.fixed_height.url} alt={result.title} height="300px" />
+                <div key={index} className="result">
+                    <img src={result.images.fixed_height.url} alt={result.title} />
                     <p>{result.title}</p>
                 </div>
             ))}
