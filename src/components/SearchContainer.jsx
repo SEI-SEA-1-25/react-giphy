@@ -29,6 +29,7 @@ export default function SearchContainer(){
         setSearched(true)
         console.log('Searched!')
         console.log(query)
+        setQuery('')
     
     }
 
