@@ -1,15 +1,12 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
-import Header from './components/Header'
-import Search from './components/Search'
+import SearchContainer from './components/SearchContainer'
 
 
 const Home = () => {
   return(
     <div>
-      <Header />
-      <Search />
+      <h1>The home component</h1>
+      <SearchContainer />
     </div>
   )
 }

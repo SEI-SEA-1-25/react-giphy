@@ -1,27 +1,17 @@
-import {useState, useEffect} from 'react'
 
-const Search = () => {
-    const [querySearch, setQuerySearch] = useState([])
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log('searched') 
-    }
-
-    const handleChange = (e) => {
-        this.setQuerySearch({querySearch: e.target.value})
-    }
+const Search = props => {
 
     return(
         <div className="search">
             <h3>Search for Giphy:</h3>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={props.handleSubmit}>
                 <input 
                     type="text"
-                    value={querySearch}
+                    value={props.querySearch}
                     placeholder="Search"
-                    onChange={handleChange}
+                    onChange={props.handleChange}
                 />
                 <input type="submit" value="Submit"/>
             </form>
