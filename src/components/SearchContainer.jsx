@@ -8,6 +8,7 @@ const SearchContainer = () => {
     // const GIPHY_KEY = process.env.GIPHY_KEY
     // console.log(GIPHY_KEY)
     // how do we require doenv in React?
+        // Must put it in express backend
     
     // State variables
     const[query, setQuery] = useState('')
@@ -41,6 +42,9 @@ const SearchContainer = () => {
     }, [gifResults])
 
     // Rendering
+
+    // ternary operator an if/else statement that happens in one line
+    // {hasSearched ? resultsContent : <></>}
     if(hasSearched === false  ) {
         return (
             <div className="search-bar">
