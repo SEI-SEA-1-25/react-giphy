@@ -1,11 +1,13 @@
 import Search from './Search'
 import { useState } from 'react'
 import Results from './Results'
-import axios from 'axios'const SearchContainer = () => {
+import axios from 'axios'
+
+
+const SearchContainer = () => {
     const [query, setQuery] = useState("")
     const [hasSearched, setHasSearched] = useState(false)
     const [searchResults, setSearchResults] = useState([])
-
 
 
     const handleSubmit = async e => {
