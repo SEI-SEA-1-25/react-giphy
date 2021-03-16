@@ -1,0 +1,14 @@
+.page-container {
+  text-align: center;
+  margin: 200px;
+}
+
+.results-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.result {
+  padding: 20px;
+}
