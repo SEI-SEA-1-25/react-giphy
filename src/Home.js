@@ -1,12 +1,12 @@
 //Imports//
 import "./Home.css";
-import Search from "./components/Search";
+import SearchContainer from "./components/SearchContainer";
 
 function Home() {
   return (
     <div>
       <h1>Hello from Home</h1>
-      <Search />
+      <SearchContainer />
     </div>
   );
 }
