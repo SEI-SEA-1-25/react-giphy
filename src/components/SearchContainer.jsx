@@ -1,7 +1,6 @@
 import Search from "./Search";
 import axios from "axios";
 import { useState } from "react";
-import Results from "./Results";
 
 //Main Function//
 const SearchContainer = () => {
@@ -38,7 +37,6 @@ const SearchContainer = () => {
         handleChange={handleChange}
         query={query}
       />
-      {/* <Results /> */}
     </div>
   );
 };

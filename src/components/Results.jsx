@@ -1,8 +1,9 @@
-// const Results = () => {
-//   //Define Results Map//
-//   let resultsContent = searchResults.map((results, idx) => {
-//     return <Results key={idx} searchResults={result} />;
-//   });
-//   return <div></div>;
-// };
-// export default Results;
+const Results = (props) => {
+  const searchResults = props.response.data.data;
+  console.log(searchResults);
+  //   //Define Results Map//
+  //   const resultsContent = searchResults.map((results, idx) => results);
+
+  return <div></div>;
+};
+export default Results;

@@ -5,7 +5,7 @@ import SearchContainer from "./components/SearchContainer";
 function Home() {
   return (
     <div>
-      <h1>Hello from Home</h1>
+      <h1>Search Giphy.com</h1>
       <SearchContainer />
     </div>
   );
