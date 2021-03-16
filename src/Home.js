@@ -3,7 +3,7 @@ import SearchContainer from './components/SearchContainer'
 const Home = () => {
   return (
     <div>
-      <h1>Hi!</h1>
+      <h1>It Me, Giphy</h1>
       <SearchContainer />
     </div>
   )
