@@ -1,39 +1,48 @@
 import  { useEffect, useState } from 'react';
 import Search from './Search'
+import SearchResults from './SearchResults'
 
 
-export default function SearchContainer(){
+const SearchContainer = () => {
 
-    [finalSearch,setFinalSearch] = useState("")
     const [searchString, setSearchString] = useState('default search string')
-
-    useEffect(()=>{
-        console.log("VALUE AT PARENTS HAS BEEN UPDATED")
-        console.log(searchString)
-
-    }, searchString)
+    const [searchRender, setSearchRender] = useState(false)
 
 
-    handleSubmit = async(e) => {
 
+    const handleSubmit = async(e) => {
         e.preventDefault()
-        alert("handle submit")
-        props.setSearch(searchString)
-        console.log(searchString)
-
+        setSearchRender(true)
+        //have to somehow call to render the function. 
     }
 
-    handleChange = async(e) => {
-        alert("handle change")
+    const handleChange = async(e) => {
         e.preventDefault()
         setSearchString(e.target.value)
+        console.log(searchString)
     }
+
+    const clearSearchResults = (e) => {
+        e.preventDefault()
+        setSearchRender(false)
+    }
+
 
 
     return(
     <div>
+        <h3>Hello this is Search Container</h3>
         <Search 
         handleSubmit={handleSubmit}
-        handleChange={handleChange} />
+        handleChange={handleChange}
+        searchString={searchString}
+        />
+        <SearchResults 
+        searchRender={searchRender}
+        searchString={searchString}
+        />
+        <button onClick={clearSearchResults}>Clear Search Results</button>
     </div>)
 }
+
+export default SearchContainer;
