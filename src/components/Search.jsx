@@ -1,34 +1,19 @@
-import { useState } from 'react'
-
 const Search = (props) => {
-
-  const [query, setQuery] = useState('')
-
-  const searchQuery = () => {
-    console.log('Searched!');
-  }
+  const banana = props
+  console.log(banana);
   
-  const handleSubmit = e => {
-    e.preventDefault()
-    searchQuery()
-  }
-
-  const handleChange = e => {
-    setQuery(e.target.value)
-  }
-
-  console.log(query);
-
+  
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      hello from search
+      {/* <form onSubmit={props.location.handleSubmit}>
         <input
           type="text"
-          onChange={handleChange}
-          value={query}
+          onChange={props.location.handleChange}
+          value={props.location.query}
         />
         <input type="submit"/>
-      </form>
+      </form> */}
     </div>
   )
 }
