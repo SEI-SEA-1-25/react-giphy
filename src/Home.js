@@ -1,10 +1,10 @@
-
 import './App.css';
+import Search from './component/Search';
 
 function Home() {
   return (
     <div className="App">
-      <h1>Hello from react</h1>
+      <Search />
     </div>
   );
 }
