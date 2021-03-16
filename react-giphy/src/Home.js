@@ -1,10 +1,10 @@
-import HelloWorld from "./components/HelloWorld.jsx";
+import SearchPage from "./components/SearchPage.jsx";
 import "./App.css";
 
 function Home() {
   return (
     <div className="App">
-      <HelloWorld />
+      <SearchPage />
     </div>
   );
 }
