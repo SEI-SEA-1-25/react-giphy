@@ -1,10 +1,10 @@
-import Search from './components/Search'
+import SearchContainer from './components/SearchContainer'
 
 const Home = () => {
   return (
     <div>
       <h1>Hi!</h1>
-      <Search />
+      <SearchContainer />
     </div>
   )
 }
