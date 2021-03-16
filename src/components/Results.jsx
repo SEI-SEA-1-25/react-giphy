@@ -1,9 +1,9 @@
 const Results = (props) => {
     return (
-        <div>
+        <div className="results-container">
             {props.gifResults.map((gifResult, idx) => {
                 return (
-                    <div key={idx}>
+                    <div className="result" key={idx}>
                         <img src={gifResult.images.fixed_height.url} alt="gif"/>
                     </div>
                 )

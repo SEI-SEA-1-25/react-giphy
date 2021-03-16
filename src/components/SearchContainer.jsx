@@ -43,7 +43,7 @@ const SearchContainer = () => {
     // Rendering
     if(hasSearched === false  ) {
         return (
-            <div>
+            <div className="search-bar">
                 <Search 
                     query={query}
                     handleChange={handleChange}
@@ -53,7 +53,12 @@ const SearchContainer = () => {
         )
     } else {
         return (
-            <div>
+            <div className="results-container">
+                <Search 
+                    query={query}
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                />
                 <Results gifResults={gifResults}/>
             </div>
         )
