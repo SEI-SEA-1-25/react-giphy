@@ -18,7 +18,7 @@ const SearchResults = (props) => {
         
         
         const api_results_elements = api_results_array.map(element => {
-            return <SearchResult id={element.id} url={element.bitly_gif_url} />
+            return <SearchResult id={element.id} url={element.images.fixed_height.url} />
         })
 
 
