@@ -8,8 +8,9 @@ const SearchContainer = () => {
     const [searchResults, setSearchResults] = useState([])
     const [hasSearched, setHasSearched] = useState(false)
 
-    handleSubmit = async (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
+        setHasSearched(true)
 
         const url = 'http://api.giphy.com/v1/gifs/search'
         const API_KEY = 'bs8lQnELCCJjLdAB2WjtRN8qPKJsSRCb'
@@ -21,7 +22,7 @@ const SearchContainer = () => {
         console.log('searched!')
     }
 
-    handleChange = (event) => {
+    const handleChange = (event) => {
         setQuery(event.target.value)
         console.log('handle change!')
     }
@@ -32,9 +33,13 @@ const SearchContainer = () => {
         query={query}
     />
 
-    let resultsContent = <Results
-        searchResults={searchResults}
-    />
+    let resultsContent = searchResults.map((result, idx) => {
+        return <Results
+            key={idx}
+            data={result}
+        />
+    })
+
 
     return (
         <div>
