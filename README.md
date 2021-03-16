@@ -1,135 +1,70 @@
-# React Giphy
+# Getting Started with Create React App
 
-**See Headers Below For Step By Step Outline**
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-> **Note**: each step has a corresponding commit with the implemented actions on the solution branch of this repo.
+## Available Scripts
 
-### Step 0a: Examine the Solution
+In the project directory, you can run:
 
-Take a look at the [completed app here](https://react-giphy-app.herokuapp.com/) repo.
+### `npm start`
 
-Spend time playing around with the completed exercise. Think about how you would separate your different components and functionality.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-### Step 0b: Create React App
+### `npm test`
 
-Create a new React app called react-giphy.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Remove everything from `Index.js` and `App.js`.
+### `npm run build`
 
-Now go ahead and setup `Index.js` and `App.js` from scratch (look at docs or previous labs if you need to).
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### Step 1: Set up a `HelloWorld` Component
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Before we start building our React app, let's create a `HelloWorld` component just to make sure that we've tied everything together properly.  
+### `npm run eject`
 
-- In your `/src` directory, configure your `App.js` and `index.js` files to render a `HelloWorld` component.
-- Run `npm start` and make sure everything is working (sanity check).
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-### Step 2: Add UI for Home
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- Rename `App.js` to `Home.js` to better indicate the purpose of the file. Make sure to update references to this file elsewhere in your application accordingly.
-- Create a Home component that returns a container `<div>` element, which should in turn contain a `<h1>` element.
-- Render that component to the DOM in your app's main `index.js` file
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-### Step 3: Add UI for Search
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-- Create a new file for your `Search` component.
-- Define a `Search` component that renders a search form. This can be a simple form with a single input and submit button.
-- Import the `Search` file to your `Home` file.
-- Render the `Search` component in the `Home` component.
+## Learn More
 
-### Step 4: Wire up the Search Button
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- Define your `Search` component's initial state. It should have a `query` value that corresponds to a search term.
-- Define a function that is triggered whenever the user submits the Search form. Start by just logging `"searched!"` to make sure it works.
-  - Use an event listener to attach this function to your form. Try googling `onSubmit`.
-- Define a function that updates your `query` value in state whenever a change is made to the input field. You can do this using an `onChange` function on your text box.
-- Update your submit function so that it now logs the `query` value in state.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Step 5: Move search logic to a `SearchContainer` component
+### Code Splitting
 
-- Create a new `SearchContainer` component that that renders the `Search` component. This `SearchContainer` will also handle search results. 
-- Move all of the business logic related to state for the search into the `SearchContainer` component. The `SearchContainer` component should still render the `Search` component, with any necessary properties.
-- Refactor your `Search` component so that it only renders a UI. You should pass in `SearchContainer`'s state and methods into the `Search` component as `props` as necessary.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
+### Analyzing the Bundle Size
 
-### Step 6: When a User Searches...
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-- Define a `Results` component that will take in a collection of gif objects and render each one's `source` url as well as a fixed height image.  Go ahead an look at the [Giphy search documentation](https://developers.giphy.com/docs/) to see the structure of the JSON it sends.
-- Update your `SearchContainer` component's state to include whether the user has submitted a search.
-- Update `SearchContainer`'s state to include a list of results.
-- If a user has searched, instead of rendering the `Search` component, render a `Results` component with hard coded data.
-- This is starting to look like a single page app, but we don't have routing yet. If you'd like, update the component so that the search bar and any results are always displayed on the page, and clear out old results when a new search is submitted. 
+### Making a Progressive Web App
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-<details><summary>click for simplified hard-coded gif data you could use</summary>
+### Advanced Configuration
 
-```js
-{
-  "data": [
-    {
-      "type": "gif",
-      "id": "iuHaJ0D7macZq",
-      "url": "http://giphy.com/gifs/cat-day-tomorrow-iuHaJ0D7macZq",
-      "source": "https://www.reddit.com/r/CatGifs/comments/5f0h9a/tomorrow_is_legs_day/",
-      "rating": "pg",
-      "images": {
-        "fixed_height": {
-          "url": "http://media4.giphy.com/media/iuHaJ0D7macZq/200.gif"
-        }
-      }
-    },
-    {
-      "type": "gif",
-      "id": "Z1kpfgtHmpWHS",
-      "url": "http://giphy.com/gifs/cat-way-make-Z1kpfgtHmpWHS",
-      "source": "http://shewhoseeks.blogspot.com/2016/03/cat-gifs-that-make-me-laugh-way-more.html",
-      "rating": "g",
-      "images": {
-        "fixed_height": {
-          "url": "http://media4.giphy.com/media/Z1kpfgtHmpWHS/200.gif"
-        }
-      }
-    }
-  ],
-  "meta": {
-    "status": 200,
-    "msg": "OK"
-  },
-  "pagination": {
-    "total_count": 1947,
-    "count": 25,
-    "offset": 0
-  }
-}
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-</details>
+### Deployment
 
-### Step 7: Search the Giphy API
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-- With the API we're using, you will need to [register for an API key](https://developers.giphy.com/). The API key is free, and only takes a minute or two to setup.
-- Go ahead an look at the [documentation](https://developers.giphy.com/docs/) to determine the API's proper usage.
-- We're going to be searching the giphy API based on a word or phrase to return a collection of results.
-- Load in Axios, and use it to make an HTTP request to the API search endpoint using the user's query.
-- Pass the data to the Results component to be displayed.
+### `npm run build` fails to minify
 
-## Bonus
-
-### Step 8: Add Styles to your React app
-
-- Load in Bootstrap CDN in `index.html`.
-- Modify UI to include Bootstrap classes.
-- Alternatively look into the react-bootstrap module for another way of styling your components w/ Bootstrap
-
-### Step 9: Add a single result detail component
-
-- Create a `Details` component that renders information about a single gif.
-- When a user clicks on a  gif in the results view, render the detail UI.
-
-### Step 10: 
-
-- Lets get rid of Search button and call the external API whenever User is entering string to search (Hint: you will need to useEffect() w/ your search query state variable in the dependency array
-- Warning! This functionality, while awesome, will eat through your rate limit extremely fast! The free tier of Giphy API allows for 50 searches TOTAL per hour / or 100 searches per day
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
