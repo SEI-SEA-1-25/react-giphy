@@ -1,11 +1,12 @@
 export default function Results(props){
     return (
         <div>
-            {props.names.map((name, index) => (
+            {props.results.map((result, index) => (
                 <div key={index}>
-                    <img src="name.url" alt="" height="300px" />
+                    <img src={result.images.fixed_height.url} alt={result.title} height="300px" />
+                    <p>{result.title}</p>
                 </div>
-            ))
-            )
+            ))}
         </div>
+    )
 }

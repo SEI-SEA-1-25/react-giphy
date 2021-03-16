@@ -6,7 +6,7 @@ import SearchContainer from './components/SearchContainer';
 function Home() {
   return (
     <div className="App">
-      <h1>Hello again</h1>
+      <h1>Giphy Search</h1>
       <SearchContainer />
     </div>
   );
